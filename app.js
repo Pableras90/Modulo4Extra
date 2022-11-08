@@ -1,21 +1,40 @@
 //Num almacena el numero introducido
 
-var num = () => parseInt(document.getElementById("operator").value);
-
+var newNumber = () => parseInt(document.getElementById("operator").value);
+var totalMemoria=0
 
 
 //Operaciones para los botones
-var sum = (num) => num + num;
-var rest = (num) => num - num;
-var mult = (num) => num * num;
-var div = (num) => num / num;
+var sum = (totalMemoria,newNumber) => totalMemoria + newNumber;
+var rest = (totalMemoria,newNumber) => totalMemoria - newNumber;
+var mult = (totalMemoria,newNumber) => totalMemoria * newNumber;
+var div = (totalMemoria,newNumber) => totalMemoria / newNumber;
 
 
+function resultSum(){
+    totalMemoria=sum(totalMemoria,newNumber());
+    document.getElementById("screen").innerText =totalMemoria;
 
-var resultSum = () => document.getElementById("screen").innerText = sum(num(), num());
-var resultRest = () => document.getElementById("screen").innerText = rest(num(), num());
-var resultMult = () => document.getElementById("screen").innerText = mult(num(), num());
-var resultDiv = () => document.getElementById("screen").innerText = div(num(), num());
+
+}
+function resultRest(){
+    totalMemoria=rest(totalMemoria,newNumber());
+    document.getElementById("screen").innerText =totalMemoria;
+
+
+}
+function resultMult(){
+    totalMemoria=mult(totalMemoria,newNumber());
+    document.getElementById("screen").innerText =totalMemoria;
+
+
+}
+function resultDiv(){
+    totalMemoria=div(totalMemoria,newNumber());
+    document.getElementById("screen").innerText =totalMemoria;
+
+
+}
 
 document.getElementById("buttonSum").addEventListener("click", resultSum);
 document.getElementById("buttonRest").addEventListener("click", resultRest);
@@ -24,11 +43,6 @@ document.getElementById("buttonDiv").addEventListener("click", resultDiv);
 
 
 
-/*//Muestra el resultado
-var resultSum = () => num + num;
-var resultRest = () => num - num;
-var resultMult = () => num * num;
-var resultDiv = () => num / num;*/
 
 
 
