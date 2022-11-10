@@ -1,8 +1,12 @@
 //100 Standar;120 Junior Suite;150 Suite.
+var totalPrice=0
 
 function seleccionarHabitacion() {
-    var room = document.getElementById('roomType').value;
-    var priceRoom;
+    room = document.getElementById('roomType').value;
+    return room;
+}
+
+function priceRoom() {
     if (room === "Standard") {
         priceRoom = 100;
     } else if (room === "Junior Suite") {
@@ -11,8 +15,7 @@ function seleccionarHabitacion() {
         priceRoom = 150;
     }
     return priceRoom;
-    
-}
-document.getElementById("roomType").addEventListener("change", seleccionarHabitacion);
 
-console.log(seleccionarHabitacion())
+}
+document.getElementById("roomType").addEventListener("change", console.log(seleccionarHabitacion()));
+console.log(priceRoom())
