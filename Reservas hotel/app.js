@@ -2,26 +2,24 @@
 var totalPrice = 0
 
 function seleccionarHabitacion() {
-    room = document.getElementById('roomType').value;
+    var room = document.getElementById('roomType').value;
     return room;
 }
 
 
 
 function typeRoom() {
-
+    var priceRoom=0
     if (seleccionarHabitacion() === "Standard") {
-        priceRoom = 100;
+        var priceRoom = 100;
     } else if (seleccionarHabitacion() === "Junior Suite") {
-        priceRoom = 120;
+        var priceRoom = 120;
     } else if (seleccionarHabitacion() === "Suite") {
-        priceRoom = 150;
+        var priceRoom = 150;
     }
     return priceRoom;
 }
 
-document.getElementById("roomType").addEventListener("change", typeRoom)
-
-console.log(typeRoom())
+document.getElementById("roomType").addEventListener("change", console.log(typeRoom()))
 
 
