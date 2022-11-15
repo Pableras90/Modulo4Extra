@@ -23,14 +23,14 @@ function tipoHabitacion() {
     return numHabitacion;
 }
 
-function occupancy(precio) {
-    var roomInd = 0
-    if (occupancy() == "Individual") {
-        roomInd = precio - (precio * 0.25);
-    } else if (occupancy() == "Doble") {
-        roomInd = precio;
-    } else if (occupancy() == "Triple") {
-        roomInd = precio + (precio * 0.25);
+function occupancy() {
+    var roomInd;
+    if (tipoHabitacion() == "Individual") {
+        roomInd = 0.75;
+    } else if (tipoHabitacion() == "Doble") {
+        roomInd = 1;
+    } else if (tipoHabitacion() == "Triple") {
+        roomInd = 1.25;
     }
     return roomInd;
 }
@@ -52,12 +52,13 @@ function parking() {
     return parseInt(document.getElementById("nightPark").value);
 }
 
-function suma() {
-
-    console.log(typeRoom)
-}
+var suma = () => (((typeRoom() + spa()) * occupancy()) * nights()) + (parking() * 10)
 
 
-document.getElementById("boton").addEventListener("click", suma)
+
+
+
+document.getElementById("boton").addEventListener("click", () => console.log(suma()))
+
 
 
