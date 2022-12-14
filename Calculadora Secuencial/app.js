@@ -1,39 +1,49 @@
 //Num almacena el numero introducido
 
 var newNumber = () => parseInt(document.getElementById("operator").value);
-var totalMemoria=0
+
 
 
 //Operaciones para los botones
-var sum = (totalMemoria,newNumber) => totalMemoria + newNumber;
-var rest = (totalMemoria,newNumber) => totalMemoria - newNumber;
-var mult = (totalMemoria,newNumber) => totalMemoria * newNumber;
-var div = (totalMemoria,newNumber) => totalMemoria / newNumber;
+var sum = (totalMemoria, newNumber) => totalMemoria + newNumber;
+var rest = (totalMemoria, newNumber) => totalMemoria - newNumber;
+var mult = (totalMemoria, newNumber) => totalMemoria * newNumber;
+var div = (totalMemoria, newNumber) => totalMemoria / newNumber;
 
 
-function resultSum(){
-    totalMemoria=sum(totalMemoria,newNumber());
-    document.getElementById("screen").innerText =totalMemoria;
-
-
-}
-function resultRest(){
-    totalMemoria=rest(totalMemoria,newNumber());
-    document.getElementById("screen").innerText =totalMemoria;
-
+function resultSum() {
+    var memoria = parseInt(document.getElementById("screen").innerText);
+    if (!memoria) {
+        document.getElementById("screen").innerText = newNumber();
+    } else {
+        document.getElementById("screen").innerText = sum(memoria, newNumber());
+    }
 
 }
-function resultMult(){
-    totalMemoria=mult(totalMemoria,newNumber());
-    document.getElementById("screen").innerText =totalMemoria;
-
+function resultRest() {
+    var memoria = parseInt(document.getElementById("screen").innerText);
+    if (!memoria) {
+        document.getElementById("screen").innerText = newNumber();
+    } else {
+        document.getElementById("screen").innerText = rest(memoria, newNumber());
+    }
+}
+function resultMult() {
+    var memoria = parseInt(document.getElementById("screen").innerText);
+    if (!memoria) {
+        document.getElementById("screen").innerText = newNumber();
+    } else {
+        document.getElementById("screen").innerText = mult(memoria, newNumber());
+    }
 
 }
-function resultDiv(){
-    totalMemoria=div(totalMemoria,newNumber());
-    document.getElementById("screen").innerText =totalMemoria;
-
-
+function resultDiv() {
+    var memoria = parseInt(document.getElementById("screen").innerText);
+    if (!memoria) {
+        document.getElementById("screen").innerText = newNumber();
+    } else {
+        document.getElementById("screen").innerText = div(memoria, newNumber());
+    }
 }
 
 document.getElementById("buttonSum").addEventListener("click", resultSum);

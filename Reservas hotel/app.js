@@ -58,7 +58,7 @@ var suma = () => (((typeRoom() + spa()) * occupancy()) * nights()) + (parking() 
 
 
 
-document.getElementById("boton").addEventListener("click", () => console.log(suma()))
+document.getElementById("boton").addEventListener("click", () => document.getElementById("result").innerText = suma());
 
 
 
